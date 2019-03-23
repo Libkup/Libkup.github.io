@@ -119,7 +119,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171022001738037-1195721153.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/22/github-hexo-个人域名搭建博客/TIM截图20190322225423.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/22/github-hexo-个人域名搭建博客/TIM截图20190322225653.png">
-<meta property="og:updated_time" content="2019-03-23T09:48:30.301Z">
+<meta property="og:updated_time" content="2019-03-23T11:04:18.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo+个人域名搭建博客">
 <meta name="twitter:description" content="一：本地环境准备 安装Node.js和配置Node.js环境，进入CMD输入以下命令可以看到如下反应，若正常安装输入命令没有如下反应，检查Node.js的环境变量配置是否正确。    安装GIt和配置Git环境     其中上图为鼠标右键在电脑任何地方都能出现，下图为在CMD中能够正确使用   二：GitHub账号准备 注册GitHub账号  新建一个项目，名为 账户名.github.io，注意：">
@@ -264,36 +264,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
-            
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
-            
-            公益404
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-something">
           <a href="/something" rel="section">
             
@@ -413,12 +383,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-23T17:48:30+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-23T19:04:18+08:00">
                 2019-03-23
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -543,15 +535,10 @@
 <li><p>配置ssh</p>
 <p>输入<code>cd ~/.ssh</code>进入ssh文件夹，如果没有则<code>mkdir ~/.ssh</code>新建一个</p>
 <p>​                <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021233157224-1386748377.png" alt="1108615-20171021233157224-1386748377"></p>
-<p>进入目录后，输入<code>ssh-keygen -t rsa -C “929762930@qq.com”</code>，连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。</p>
-<p>​                <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234107209-1205335399.png" alt="1108615-20171021234107209-1205335399"></p>
+<p>进入目录后，输入<code>ssh-keygen -t rsa -C “929762930@qq.com”</code>，连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。    <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234107209-1205335399.png" alt="1108615-20171021234107209-1205335399"></p>
+<p>输入<code>eval &quot;$(ssh-agent -s)&quot;</code>，添加密钥到ssh-agent<br>​<img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234314146-695835137.png" alt="1108615-20171021234314146-695835137"></p>
+<p> 再输入<code>ssh-add ~/.ssh/id_rsa</code>，添加生成的SSH key到ssh-agent.<br> <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234528552-610835964.png" alt="1108615-20171021234528552-610835964"></p>
 </li>
-</ol>
-<p>   输入<code>eval &quot;$(ssh-agent -s)&quot;</code>，添加密钥到ssh-agent</p>
-<p>   ​                <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234314146-695835137.png" alt="1108615-20171021234314146-695835137"></p>
-<pre><code>再输入`ssh-add ~/.ssh/id_rsa`，添加生成的SSH key到ssh-agent
-</code></pre><p>   ​                <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234528552-610835964.png" alt="1108615-20171021234528552-610835964"></p>
-<ol start="3">
 <li><p>登陆Github，配置ssh,点击头像下的settings，添加ssh</p>
 <p> <img src="/2019/03/22/github-hexo-个人域名搭建博客/1108615-20171021234636834-426105098.png" alt="1108615-20171021234636834-426105098"></p>
 <p> 新建一个new ssh key，将id_rsa.pub文件里的内容复制上去</p>
@@ -712,6 +699,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
             
 
             
