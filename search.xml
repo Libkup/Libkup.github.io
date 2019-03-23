@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2019%2F03%2F22%2Ftest%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[github+hexo+个人域名搭建博客]]></title>
     <url>%2F2019%2F03%2F22%2Fgithub-hexo-%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[一：本地环境准备 安装Node.js和配置Node.js环境，进入CMD输入以下命令可以看到如下反应，若正常安装输入命令没有如下反应，检查Node.js的环境变量配置是否正确。 安装GIt和配置Git环境 其中上图为鼠标右键在电脑任何地方都能出现，下图为在CMD中能够正确使用 二：GitHub账号准备 注册GitHub账号 新建一个项目，名为 账户名.github.io，注意：此处账户名一定要为GitHub的用户名（我这里已经有了这个项目，所以提示报错了） 建好项目后在项目的右边有一个setting 在此页面往下拉，一直拉到Github Pages ​ 此处会有一个域名，你已经可以通过外网访问该地址到自己项目（此处我已经替换成了我自己的域名，有所不同不用理会） 三：安装配置Hexo 选址：我这边放在D：\Blog下 输入npm install hexo -g，开始安装Hexo 输入hexo -v，检查是否安装成功 hexo 初始化，输入hexo init，初始化该文件夹 看到最后一句 Start blogging with Hexo! 表示安装成功了。 输入npm install，安装所需要的组件 ​ 输入hexo g，首次体验Hexo ​ 输入hexo s，开启服务器，以供本地访问 ​ 启动成功后，在浏览器输入：http://localhost:4000，如果无法打开，则可能端口被占用了，CTRL + C停止，再输入hexo server -p 端口号”来改变端口号 ​ 出现该图就成功了。 四：将Github与Hexo联系起来 配置Git的user 和 email（如果之前没有配置过）,在你部署Hexo的文件夹右键点击GIt Base Here，我的目录是D:\Blog ​ 配置ssh 输入cd ~/.ssh进入ssh文件夹，如果没有则mkdir ~/.ssh新建一个 ​ 进入目录后，输入ssh-keygen -t rsa -C “929762930@qq.com”，连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。 输入eval &quot;$(ssh-agent -s)&quot;，添加密钥到ssh-agent​ 再输入ssh-add ~/.ssh/id_rsa，添加生成的SSH key到ssh-agent. 登陆Github，配置ssh,点击头像下的settings，添加ssh 新建一个new ssh key，将id_rsa.pub文件里的内容复制上去 再回到git bash输入ssh -T git@github.com，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了 配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾） repository值是你在github项目里的ssh（右下角） 五：基本使用 新建一篇博客，在cmd的hexo目录下输入：hexo new post &quot;博客名&quot;，如hexo new post &quot;你好，Hexo&quot;，执行完后，在source\_posts目录下已经生成了该文件，该文件就是我们博客的主体了。 在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git --save ​ ​使用编辑器编好文章，那么就可以使用命令：hexo d -g，生成以及部署了 ​ ​部署成功后访问你的地址：http://用户名.github.io。那么将看到生成的文章 六：绑定个人域名到该项目 注册域名，我用的阿里的云 解析域名到项目，如图添加两条CNAME记录到GitHub的相应地址，即：github名.github.oi，这两条记录分别为libenkang.xyz和www.libenkang.xyz访问 GitHub这边在项目的setting里往下拉，拉到GitHub pages，有一栏Custom domain，填入你的域名地址，如我的libenkang.xyz 七：到这里教程就全部完了]]></content>
